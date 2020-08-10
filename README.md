@@ -2,7 +2,7 @@
 # Download Kafka binaries
 https://kafka.apache.org/downloads
 
-# Start zookeper
+# Start Zookeeper
 zookeeper-server-start.sh ../config/zookeeper.properties
 
 # Start kafka
