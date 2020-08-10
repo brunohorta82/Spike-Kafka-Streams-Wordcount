@@ -1,4 +1,6 @@
 # Spike-Kafka-Streams-Wordcount
+# Download Kafka binaries
+https://kafka.apache.org/downloads
 
 # Start zookeper
 zookeeper-server-start.sh ../config/zookeeper.properties
