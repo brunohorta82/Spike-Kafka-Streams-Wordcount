@@ -9,7 +9,7 @@ zookeeper-server-start.sh ../config/zookeeper.properties
 kafka-server-start.sh ../config/server.properties
 
 # Start Kafka producer
-kafka-console-producer.sh --broker-list localhost:9092 --topic words
+kafka-console-producer.sh --broker-list localhost:9092 --topic word-count-input
 
 # Start Kafka consumers
 

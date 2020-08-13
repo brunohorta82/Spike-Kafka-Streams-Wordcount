@@ -1,8 +1,5 @@
 package bh.spikes.pt;
 
-import java.util.Properties;
-import java.util.Arrays;
-
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.common.serialization.Serdes;
 import org.apache.kafka.streams.KafkaStreams;
@@ -11,20 +8,22 @@ import org.apache.kafka.streams.StreamsConfig;
 import org.apache.kafka.streams.Topology;
 import org.apache.kafka.streams.kstream.*;
 
+import java.util.Arrays;
+import java.util.Properties;
+
 public class WordCountApp {
 
-    private Topology createTopology(){
+    protected Topology createTopology() {
         StreamsBuilder builder = new StreamsBuilder();
-        KStream<String, String> textLines = builder.stream("words");
+        KStream<String, String> textLines = builder.stream("word-count-input");
         KTable<String, Long> wordCounts = textLines
-
                 .mapValues((ValueMapper<String, String>) String::toLowerCase)
                 .flatMapValues(textLine -> Arrays.asList(textLine.split("\\W+")))
-                // select key to apply a key (we discard the old key)
+                // select key to apply a new key
                 .selectKey((key, word) -> word)
                 // group by key before aggregation
                 .groupByKey()
-                // count occurences
+                // count word occurrences
                 .count(Materialized.as("Counts"));
 
         // write the results to kafka
@@ -45,11 +44,8 @@ public class WordCountApp {
 
         KafkaStreams streams = new KafkaStreams(wordCountApp.createTopology(), config);
         streams.start();
-
         // shutdown hook to correctly close the streams application
         Runtime.getRuntime().addShutdownHook(new Thread(streams::close));
-
-
 
 
     }
