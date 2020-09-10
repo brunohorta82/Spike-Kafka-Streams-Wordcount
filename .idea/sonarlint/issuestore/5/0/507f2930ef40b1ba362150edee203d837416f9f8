@@ -1,0 +1,13 @@
+
+U	java:S106""9Replace this use of System.out or System.err by a logger.(á¥ã8ó…ı¿¾.
+Z	java:S106)"9Replace this use of System.out or System.err by a logger.(î§çâùÿÿÿÿ8ó…ı¿¾.
+h
+java:S2095"KUse try-with-resources or close this "KafkaProducer" in a "finally" clause.(¶´‰ƒ8ØÅ¿¾.
+U	java:S1066"9Replace this use of System.out or System.err by a logger.(ÚÚ´Ô8ó…ı¿¾.
+Z	java:S106/"9Replace this use of System.out or System.err by a logger.(İà£Àıÿÿÿÿ8ó…ı¿¾.
+U	java:S106F"9Replace this use of System.out or System.err by a logger.(–Ò™ø8ó…ı¿¾.
+U	java:S106?"9Replace this use of System.out or System.err by a logger.(ßğ»¬8ó…ı¿¾.
+c
+java:S1192@"FDefine a constant instead of duplicating this literal "alice" 3 times.(şöÓ8ó…ı¿¾.
+e
+java:S11927"IDefine a constant instead of duplicating this literal "stephane" 4 times.(§µÌ(8ó…ı¿¾.
